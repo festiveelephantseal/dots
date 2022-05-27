@@ -11,4 +11,3 @@
 `stow *`
 
 ![gallery 1](./gallery1.png)
-![gallery 2](./gallery2.png)
