@@ -1,0 +1,93 @@
+* { all: unset; }
+
+.items, .items1, .items2, .items3, .items4, .items5, .items6 {
+  background-color: #2e3440;
+  border-radius: 16px;
+  padding: 13px;
+}
+
+.time_hour, .time_min, .seperator {
+  font-weight: bold;
+  font-size: 25px;
+  color: #A3BE8C;
+}
+
+.cpu_usage {
+  color: #bf616a;
+  background-color: #4c566a;
+}
+
+.cpu_text {
+  font-size: 26px;
+  // color: #eceff4;
+  color: #bf616a;
+}
+
+.items2 * {
+  background-image: url("/home/raghav/Pictures/pfp.png");
+  border-radius: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// .bright_bar {
+//   background-color: #5e81ac;
+//   border-radius: 10px;
+// }
+
+.bat0 highlight, .bat1 highlight {
+  background-color: #88c0d0;
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.bat0 trough, .bat1 trough {
+  background-color: #4c566a ;
+  border-radius: 0.2em;
+  min-height: 20px;
+  min-width: 230px;
+}
+
+
+
+.bright_bar highlight {
+  background-color: #5e81ac;
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.bright_bar trough {
+  background-color: #4c566a ;
+  border-radius: 0.2em;
+  min-height: 20px;
+  min-width: 260px;
+}
+
+.mem_scale highlight {
+  background-color: #a3be8c;
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.mem_scale trough {
+  background-color: #4c566a ;
+  border-radius: 0.2em;
+  min-height: 20px;
+  min-width: 182px;
+}
+
+
+.bright_icon {
+  font-size: 32px;
+  color: #5e81ac;
+}
+
+.bat_icon {
+  font-size: 32px;
+  color: #88c0d0;
+}
+
+.mem_icon {
+  font-size: 32px;
+  color: #a3be8c;
+}

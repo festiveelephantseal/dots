@@ -1,0 +1,108 @@
+#background_opacity: 0.9
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: 'xterm-256color'
+
+window:
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 15
+    y: 15
+  # opacity: 0.9
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 1000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: 'JetBrainsMono Nerd Font'
+
+    # The `style` can be specified to pick a specific face.
+    #style: Regular
+
+  # Bold font face
+  bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: 'JetBrainsMono Nerd Font'
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold
+
+  # Italic font face
+  italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: 'JetBrainsMono Nerd Font'
+
+    # The `style` can be specified to pick a specific face.
+    #style: Italic
+
+  # Point size
+  size: 7 
+
+colors:
+  # Default colors
+  primary:
+    background: '0x232731'
+    foreground: '0xb8bec9'
+
+  # Normal colors
+  normal:
+    black: '0x4c566a'
+    red: '0xbf616a'
+    green: '0xa3be8c'
+    yellow: '0xd7ba7d'
+    blue: '0x5e81ac'
+    magenta: '0xb48ead'
+    cyan: '0x88c0d0'
+    white: '0xabb2bf'
+
+  # Bright colors
+  bright:
+    black: '0x6c768a'
+    red: '0xaf7370'
+    green: '0xb5cea8'
+    yellow: '0xe7cb93'
+    blue: '0x69a8c6'
+    magenta: '0x939ede'
+    cyan: '0x69bac8'
+    white: '0xd8dee9'
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: 'Block'
+
+key_bindings:
+  - { key: PageUp, mods: Shift, action: ScrollPageUp }
+  - { key: PageDown, mods: Shift, action: ScrollPageDown }
