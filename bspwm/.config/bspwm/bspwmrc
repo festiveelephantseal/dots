@@ -6,6 +6,8 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         0
 bspc config window_gap           6 
+bspc config top_padding 0
+bspc config left_padding 35
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -17,11 +19,8 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a Zathura state=tiled
 
-
-~/.config/polybar/launch.sh
-feh --bg-scale ~/Pictures/nordic-wallpapers/wallpapers/ign_unsplash7.png
+~/.local/bin/eww --config ~/.config/eww/bar/ open bar
+feh --bg-scale ~/Pictures/nordic-wallpapers/wallpapers/ign_lighthouse.png
 picom & 
-
-# ~/.local/bin/eww open clock --toggle && ~/.local/bin/eww open monitor --toggle && ~/.local/bin/eww open user --toggle && ~/.local/bin/eww open bright --toggle && ~/.local/bin/eww open battery --toggle && ~/.local/bin/eww open memory --toggle
-

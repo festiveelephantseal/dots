@@ -1,0 +1,4 @@
+#!/bin/bash
+
+~/.local/bin/eww --config ~/.config/eww/widgets open clock --toggle && ~/.local/bin/eww --config ~/.config/eww/widgets  open monitor --toggle && ~/.local/bin/eww --config ~/.config/eww/widgets open user --toggle && ~/.local/bin/eww --config ~/.config/eww/widgets open bright --toggle && ~/.local/bin/eww --config ~/.config/eww/widgets open battery --toggle && ~/.local/bin/eww --config ~/.config/eww/widgets open memory --toggle
+

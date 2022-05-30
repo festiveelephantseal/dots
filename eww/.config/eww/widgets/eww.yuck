@@ -1,18 +1,10 @@
 (defpoll HOUR :interval "5s" `date +\"%I\"`)
 (defpoll MIN :interval "1s" `date +\"%M\"`)
-(defpoll CPU :interval "1s" `scripts/sys_info --cpu`)
+(defpoll CPU :interval "1s" `../scripts/sys_info --cpu`)
 (defpoll BRIGHT :interval "5s" `xbacklight`)
 (defpoll BATTERY0 :interval "1s" `cat /sys/class/power_supply/BAT0/capacity`)
 (defpoll BATTERY1 :interval "1s" `cat /sys/class/power_supply/BAT1/capacity`)
-(defpoll MEMORY :interval "2s" `scripts/sys_info --mem`)
-
-(defpoll SONG :interval "1s" `scripts/music_info --song`)
-(defpoll ARTIST :interval "1s" `scripts/music_info --artist`)
-(defpoll STATUS :interval "1s" `scripts/music_info --status`)
-(defpoll CURRENT :interval "1s" `scripts/music_info --time`)
-(defpoll COVER :interval "1s" `scripts/music_info --cover`)
-(defpoll CTIME :interval "1s" `scripts/music_info --ctime`)
-(defpoll TTIME :interval "1s" `scripts/music_info --ttime`)
+(defpoll MEMORY :interval "2s" `../scripts/sys_info --mem`)
 
 (defvar IMAGE "/home/raghav/Pictures/pfp.jpg")
 
