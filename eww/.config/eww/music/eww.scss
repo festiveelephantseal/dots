@@ -1,0 +1,20 @@
+* {
+  all: unset;
+}
+
+.music_window {
+  background-color: #232731;
+  border-radius: 16px;
+}
+
+.curr_song {
+  padding-top: 30px;
+}
+
+.btn_play, .btn_next, .btn_prev {
+  font-size: 15px;
+}
+
+.music_controls {
+  margin-bottom: 10px;
+}

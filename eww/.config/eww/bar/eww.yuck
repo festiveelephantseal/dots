@@ -1,4 +1,6 @@
-(defpoll COVER :interval "2s" `../scripts/music_info --cover`)
+(defpoll COVER  :interval "2s" `../scripts/music_info --cover`)
+(defpoll HOUR   :interval "2s" `date +%I`)
+(defpoll MIN    :interval "2s" `date +%M`)
 
 (defwidget workspaces []
   (box :class "workspaces"
@@ -6,15 +8,30 @@
        :space-evenly false 
        :valign "center"
        :spacing 10
-    (button :class "one" :onclick "wmctrl -s 0" "一")
-    (button :class "two" :onclick "wmctrl -s 1" "二")
+    (button :class "one"   :onclick "wmctrl -s 0" "一")
+    (button :class "two"   :onclick "wmctrl -s 1" "二")
     (button :class "three" :onclick "wmctrl -s 2" "三")
-    (button :class "four" :onclick "wmctrl -s 3" "四")))
+    (button :class "four"  :onclick "wmctrl -s 3" "四")))
+
+(defwidget time[]
+  (box :orientation "v" :class "time" :valign "end"
+    (label :class "time-hour" :text HOUR)
+    (label :class "time-min"  :text MIN)
+  )
+)
 
 (defwidget bar[]
-  (box 
+  (box :orientation "v" :space-evenly true 
+  (box :space-evenly false :orientation "v" :valign "start"
+    (button :onclick `~/.local/bin/eww --config ~/.config/eww/music/ open music --toggle`
+      (label :class "mus_icon" :text ""))
+  )
+  (box :space-evenly false :orientation "v" :valign "center" 
     (workspaces)
   )
+  (box :space-evenly false :orientation "v" :valign "end" 
+    (time)
+  ))
 )
 
 (defwindow bar

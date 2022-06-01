@@ -57,25 +57,25 @@
 )
 
 (defwindow clock :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 840 :y 295 :width 120 :height 15)
+	    :geometry (geometry :x 880 :y 335 :width 120 :height 15)
 					(clock))
 
 (defwindow monitor :stacking "fg" :focusable "false" :screen 1 
-      :geometry (geometry :x 840 :y 150 :width 120 :height 135)
+      :geometry (geometry :x 880 :y 190 :width 120 :height 135)
           (monitor))
 
 (defwindow user :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 610 :y 150 :width 220 :height 200)
+	    :geometry (geometry :x 650 :y 190 :width 220 :height 200)
 					(user))
 
 (defwindow bright :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 610 :y 360 :width 350 :height 120)
+	    :geometry (geometry :x 650 :y 400 :width 350 :height 120)
 					(bright))
 
 (defwindow battery :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 345 :y 150 :width 250 :height 200)
+	    :geometry (geometry :x 385 :y 190 :width 250 :height 200)
 					(bat))
 
 (defwindow memory :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 345 :y 360 :width 250 :height 120)
+	    :geometry (geometry :x 385 :y 400 :width 250 :height 120)
 					(mem))
