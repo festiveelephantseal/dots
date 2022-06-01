@@ -23,7 +23,7 @@
 (defwidget bar[]
   (box :orientation "v" :space-evenly true 
   (box :space-evenly false :orientation "v" :valign "start"
-    (button :onclick `~/.local/bin/eww --config ~/.config/eww/music/ open music --toggle`
+    (button :timeout "10s" :onclick `~/.config/eww/scripts/musicWidget`
       (label :class "mus_icon" :text ""))
   )
   (box :space-evenly false :orientation "v" :valign "center" 

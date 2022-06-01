@@ -1,3 +1,5 @@
 #!/bin/bash
 
-~/.local/bin/eww --config ~/.config/eww/music/ open music && sleep 3 && ~/.local/bin/eww --config ~/.config/eww/music close music
+~/.local/bin/eww --config ~/.config/eww/music/ open music 
+sleep 3 
+~/.local/bin/eww --config ~/.config/eww/music close music
