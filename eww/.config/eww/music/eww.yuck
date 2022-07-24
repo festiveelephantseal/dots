@@ -4,7 +4,7 @@
 (defwidget mus[]
 (box :class "music_window" :orientation "v" :space-evenly true 
   (box :space-evenly false :orientation "v" :valign "start" 
-    (label :valign "true" :wrap "true" :limit-width 20 :class "curr_song" :text "${SONG}")
+    (label :valign "center" :limit-width 20 :class "curr_song" :text "${SONG}")
   )
   (box :class "music_controls" :space-evenly true :orientation "h" :valign "end" :spacing 10 
       (button :class "btn_prev" :onclick "mpc prev" "玲")
