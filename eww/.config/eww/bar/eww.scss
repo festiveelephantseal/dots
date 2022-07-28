@@ -1,0 +1,83 @@
+* {
+all:unset;
+}
+
+window {
+	background-color: #141b1e;
+	border-radius: 10px;
+}
+
+.workspaces {
+	padding-left: 10px;
+}
+
+/*
+.time {
+	padding-right: 10px;
+}
+*/
+
+
+.cpu_text {
+	font-size: 26px;
+	color: #8ccf7e;
+}
+
+.cpu {
+	padding-right: 10px;
+	color: #8ccf7e;
+}
+
+.one {
+	color: #e57474;
+}
+.two {
+	color: #8ccf7e;
+}
+.three {
+	color: #67b0e8;
+}
+.four{
+	color: #c47fd5;
+}
+
+.bright_bar highlight {
+  background-color: #e5c76b;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.bright_bar trough {
+  background-color: #232a2d;
+  border-radius: 10px;
+  min-height: 10px;
+  min-width: 55px;
+  margin-right: 10px;
+}
+
+
+.vol_bar highlight {
+  background-color: #6cbfbf;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.vol_bar trough {
+  background-color: #232a2d;
+  border-radius: 10px;
+  min-height: 10px;
+  min-width: 55px;
+  margin-right: 10px;
+}
+
+
+
+.bright_text {
+	margin-right: 10px;
+	color: #e5c76b;
+}
+
+.vol_icon {
+	margin-right: 10px;
+	color: #6cbfbf;
+}

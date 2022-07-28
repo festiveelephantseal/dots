@@ -1,0 +1,95 @@
+(defpoll HOUR   :interval "2s" `date +%I`)
+(defpoll MIN    :interval "2s" `date +%M`)
+(defpoll CPU :interval "1s" `../scripts/sys_info --cpu`)
+(defpoll BRIGHT :interval "1s" `xbacklight`)
+(defvar br_reveal false)
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+(defvar vol_reveal false)
+(defpoll VOL :interval "1s" `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'`)
+
+(defwidget time[]
+  (box :orientation "h" :class "time"
+    (label :class "time-hour" :text HOUR)
+    (label :class "break"     :text  ":")
+    (label :class "time-min"  :text MIN)
+  )
+)
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :spacing 25
+    (button :class "one"   :onclick "wmctrl -s 0" "一")
+    (button :class "two"   :onclick "wmctrl -s 1" "二")
+    (button :class "three" :onclick "wmctrl -s 2" "三")
+    (button :class "four"  :onclick "wmctrl -s 3" "四")))
+
+(defwidget bright []
+  (eventbox :onhover "${eww} update br_reveal=true" :onhoverlost "${eww} update br_reveal=false"
+  (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
+    (label :text "盛" :class "bright_icon" :tooltip "brightness" :class "bright_text")
+	(revealer :transition "slideleft"
+			  :reveal br_reveal
+			  :duration "350ms"
+	(scale :class "bright_bar"
+			  :value BRIGHT 
+			  :orientation "h"
+			  :tooltip "${BRIGHT}%"
+			  :max 100
+			  :min 0
+			  :onchange "xbacklight -set {}" )))))
+
+(defwidget vol[]
+  (eventbox :onhover "${eww} update vol_reveal=true" :onhoverlost "${eww} update vol_reveal=false"
+  (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
+    (label :text "" :class "vol_icon" :tooltip "volume")
+	(revealer :transition "slideleft"
+			  :reveal vol_reveal
+			  :duration "350ms"
+	(scale :class "vol_bar"
+			  :value VOL 
+			  :orientation "h"
+			  :tooltip "${VOL}%"
+			  :max 100
+			  :min 0
+			  :onchange "amixer -D pulse sset Master {}%")))))
+
+
+
+
+(defwidget center[]
+	(box :orientation "h" :space-evenly false :class "center_modules" :halign "center"
+(time)))
+
+(defwidget left[]
+	(box :orientation "h" :space-evenly false :class "left_modules" :halign "start"
+(workspaces)))
+
+(defwidget right[]
+  (box :orientation "h" :space-evenly false :class "left_modules" :halign "end"
+    (vol)
+    (bright)
+))
+
+
+
+(defwidget bar[]
+  	(box :orientation "h" :class "bar_class" :space-evenly true 
+		(left)
+		(center)
+		(right)
+	)
+)
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "10%"
+                      :y "1%"
+                      :width "80%"
+                      :height "30px"
+                      :side "top"
+            )
+  :stacking "fg"
+  :reserve (struts :side "top" :distance "4%")
+  (bar))
