@@ -1,3 +1,2 @@
 # dots
-
-https://user-images.githubusercontent.com/33642056/181405681-f49eb141-b957-406a-9ed1-2a70a69dc31d.mp4
+https://user-images.githubusercontent.com/33642056/181405868-20de03c0-db30-4240-94e3-8c419dfd0291.mp4
